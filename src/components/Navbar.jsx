@@ -97,23 +97,40 @@ const Navbar = () => {
           <div className="flex items-center gap-3 md:gap-6 ml-auto">
             <button
               className="md:hidden w-12 h-12 bg-teal-50 rounded-full"
-              onClick={() => setClick(currentVal => !currentVal)}
+              onClick={() => setClick((currentVal) => !currentVal)}
             >
               <i className="fa-solid fa-magnifying-glass text-xl"></i>
             </button>
-            <Link to="/editor" className="hidden md:flex gap-2 link">
+
+            {userAuth.accessToken ? (
+              <Link to="/editor" className="hidden md:flex gap-2 link">
+                <i className="fa-solid fa-file-pen"></i>
+                <p>Write</p>
+              </Link>
+            ) : (
+              <p
+                className="hidden md:flex gap-2 link"
+                onClick={() => navigate("/login")}
+              >
+                <i className="fa-solid fa-file-pen"></i>
+                <p>Write</p>
+              </p>
+            )}
+
+            {/* <Link to="/editor" className="hidden md:flex gap-2 link">
               <i className="fa-solid fa-file-pen"></i>
               <p>Write</p>
-            </Link>
+            </Link> */}
             {accessToken ? (
               <>
                 <Link to="/dashboard/notifications">
                   <button className="relative w-12 h-12 rounded-full bg-red-100/10 hover:bg-red-200">
                     <i className="fa-regular fa-bell text-2xl block"></i>
-                    {
-                      new_notification_available ? <span className='bg-red-500 w-3 h-3 rounded-full absolute z-10 top-2 right-2'></span> : ""
-                    }
-                    
+                    {new_notification_available ? (
+                      <span className="bg-red-500 w-3 h-3 rounded-full absolute z-10 top-2 right-2"></span>
+                    ) : (
+                      ""
+                    )}
                   </button>
                 </Link>
                 <div
