@@ -46,7 +46,7 @@ const ManageBlogs = () => {
       })
       if (draft) {
 
-        console.log("draft",formatedData)
+        // console.log("draft",formatedData)
          setDrafts(formatedData)
       } else {
          setBlogs(formatedData);

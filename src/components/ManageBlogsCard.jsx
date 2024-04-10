@@ -32,7 +32,7 @@ export const ManageBlogsCard = ({ blog }) => {
     
     let [showStat, setshowStat] = useState(false);
 
-    console.log(showStat);
+    // console.log(showStat);
     return (
       <>
         {" "}
@@ -102,7 +102,7 @@ export const ManageDraftsCard = ({blog}) => {
           {index < 10 ? "0" + index : index}
         </h1>
         <div>
-          <h1 className="blog-title mb-3">{title}</h1>
+          <h1 className="blog-title mb-3 ">{title}</h1>
           <p className="line-clamp-2">
             {des.length ? des : "No Description Provided"}
           </p>

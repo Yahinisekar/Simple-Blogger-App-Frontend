@@ -115,7 +115,7 @@ const NotificationCard = ({ data, index, notificationState }) => {
         <p className="ml-14 pl-5 text-md my-5">{comment?.comment}</p>
       )}
 
-      <div className="ml-14 pl-5 mt-3 text-red-400 flex gap-8">
+      <div className="ml-14 max-sm:ml-10 pl-5 mt-3 text-red-400 flex gap-8">
         <p>{getFullDay(createdAt)}</p>
         {type !== "like" ? (
           <>

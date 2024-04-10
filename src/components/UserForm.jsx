@@ -42,6 +42,7 @@ const UserForm = ({ type }) => {
   //       }
   //     });
   // };
+  
    const userAuth = (serverRoute, formData, redirect = true) => {
     axios
       .post(import.meta.env.VITE_SERVER_DOMAIN + serverRoute, formData)

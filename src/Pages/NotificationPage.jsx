@@ -61,11 +61,23 @@ const NotificationPage = () => {
   return (
       <div>
           <h1 className='max-md:hidden'> Recent Notifications</h1>
-          <div className=' flex gap-6 capitalize'>
+          <div className=' flex capitalize max-sm:gap-0  max-sm:py-0 gap-6'>
               {
                   filters.map((filterName, i) => {
-                      return <button key={i} className={  filter == filterName ? " btn-dark " : " btn-light "
-                  } onClick={handleFilter}> { filterName }</button>
+                      return (
+                        <button
+                          key={i}
+                          className={
+                            filter == filterName
+                              ? " btn-dark  max-sm:text-sm max-sm:px-3 "
+                              : " btn-light  max-sm:text-sm max-sm:px-3 "
+                          }
+                          onClick={handleFilter}
+                        >
+                          {" "}
+                          {filterName}
+                        </button>
+                      );
                   })
               }
               
