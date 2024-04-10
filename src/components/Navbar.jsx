@@ -113,7 +113,7 @@ const Navbar = () => {
                 onClick={() => navigate("/login")}
               >
                 <i className="fa-solid fa-file-pen"></i>
-                <p>Write</p>
+                Write
               </p>
             )}
 
